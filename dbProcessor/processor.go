@@ -33,8 +33,14 @@ func mapReduceConfig() *mgo.MapReduce {
 func ProcessAqi(s *mgo.Session) (*[]MapReduceResult, error) {
 	var result []MapReduceResult
 	collection := s.DB(FetchEnv("MONGO_DB_NAME")).C(FetchEnv("MONGO_DB_COLLECTION"))
-	_, err := collection.Find(nil).MapReduce(mapReduceConfig(), &result)
 
+	var query interface{}
+
+	if country := FetchEnv("QUERY_COUNTRY", false); country != "" {
+		query = struct{ City string }{country}
+	}
+
+	_, err := collection.Find(query).MapReduce(mapReduceConfig(), &result)
 	if err != nil {
 		return nil, err
 	}
