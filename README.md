@@ -21,5 +21,5 @@ Configuration is made using env variables:
 
 ## Running tests
 
-`cd tests`
-`go test`
+* `cd tests`
+* `go test`
