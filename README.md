@@ -10,10 +10,10 @@ Make sure you are using go >= 1.9.
 ## Configuration
 
 Configuration is made using env variables:
-    * DATA_FILE - by default it is "polData.json"
-    * MONGO_DB_NAME - set to "aq"
-    * MONGO_DB_COLLECTION - set to "measurements"
-    * MONGO_DB_URL - set to "mongodb://localhost"
+* DATA_FILE - by default it is "polData.json"
+* MONGO_DB_NAME - set to "aq"
+* MONGO_DB_COLLECTION - set to "measurements"
+* MONGO_DB_URL - set to "mongodb://localhost"
 
 ## Running AQI
 
